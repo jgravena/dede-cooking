@@ -1,0 +1,37 @@
+{
+  "name": "Dede Cooking",
+  "short_name": "DedeCooking",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FF6B35",
+  "theme_color": "#FF6B35",
+  "description": "Combine ingredientes, cozinhe pratos e supere 30 fases.",
+  "lang": "pt-BR",
+  "categories": ["games", "casual", "puzzle"],
+  "icons": [
+    {
+      "src": "icons/Icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/Icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/Icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/Icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

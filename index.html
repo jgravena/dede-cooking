@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <base href="/dede-cooking/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Dede Cooking — combine ingredientes, cozinhe pratos e supere fases. Joga no navegador, sem instalar.">
+
+  <!-- PWA / iOS Add to Home Screen -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Dede Cooking">
+  <meta name="theme-color" content="#FF6B35">
+
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Tela cheia / sem zoom -->
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+  <title>Dede Cooking</title>
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #FF6B35;
+      overflow: hidden;
+      -webkit-tap-highlight-color: transparent;
+      overscroll-behavior: none;
+    }
+    #loading {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(135deg, #FF6B35 0%, #FFD166 100%);
+      z-index: 9999;
+      transition: opacity 0.4s ease;
+    }
+    #loading.done { opacity: 0; pointer-events: none; }
+    #loading .icon { font-size: 72px; margin-bottom: 16px; animation: bounce 1.2s infinite; }
+    #loading h1 { margin: 0; font-size: 28px; font-weight: 800; }
+    #loading p { margin: 8px 0 24px; opacity: 0.9; }
+    .spinner {
+      width: 28px; height: 28px;
+      border: 3px solid rgba(255,255,255,0.4);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 0.9s linear infinite;
+    }
+    @keyframes bounce { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-12px); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <div id="loading">
+    <div class="icon">🍳</div>
+    <h1>Dede Cooking</h1>
+    <p>Carregando...</p>
+    <div class="spinner"></div>
+  </div>
+
+  <script>
+    window.addEventListener('flutter-first-frame', function () {
+      var el = document.getElementById('loading');
+      if (el) { el.classList.add('done'); setTimeout(function(){ el.remove(); }, 500); }
+    });
+  </script>
+
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
